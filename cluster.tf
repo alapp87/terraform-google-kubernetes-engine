@@ -52,6 +52,10 @@ resource "google_container_cluster" "primary" {
 
   default_max_pods_per_node = var.default_max_pods_per_node
 
+  workload_identity_config {
+    identity_namespace = "${data.google_project.project.project_id}.svc.id.goog"
+  }
+
   dynamic "master_authorized_networks_config" {
     for_each = local.master_authorized_networks_config
     content {

@@ -16,6 +16,9 @@
 
 // This file was automatically generated from a template in ./autogen/main
 
+data "google_project" "project" {
+}
+
 /******************************************
   Get available zones in region
  *****************************************/
